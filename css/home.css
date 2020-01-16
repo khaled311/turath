@@ -154,7 +154,7 @@ ul.res {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: #FFF;
+  background-color: #185090;
   z-index: 9999;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -207,13 +207,13 @@ html[dir="ltr"] .sideNav.open {
 }
 
 .sideNav .opt .lang a {
-  color: #185090;
+  color: #FFF;
   font-size: 15px;
 }
 
 .sideNav .opt .close1 {
   font-size: 20px;
-  color: #185090;
+  color: #FFF;
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -260,7 +260,7 @@ html[dir="ltr"] .sideNav.open {
   width: 100%;
   display: block;
   font-size: 20px;
-  color: #185090;
+  color: #FFF;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
