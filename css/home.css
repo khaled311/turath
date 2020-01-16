@@ -278,18 +278,18 @@ html[dir="ltr"] .sideNav .links > ul > li a.lnr {
 .sideNav .links > ul > li a.lnr:before {
   position: absolute;
   top: 50%;
-  left: 23px;
+  left: 13px;
   -webkit-transform: translateY(-15%);
           transform: translateY(-15%);
   font-family: "Linearicons-Free" !important;
-  color: #185090;
+  color: #FFF;
   font-size: 8px;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 html[dir="ltr"] .sideNav .links > ul > li a.lnr:before {
-  right: 20px;
+  right: 13px;
   left: unset;
 }
 
@@ -303,7 +303,7 @@ html[dir="ltr"] .sideNav .links > ul > li a.lnr:before {
 }
 
 .sideNav .links > ul > li a.lnr + .dropDown li a {
-  color: #898989;
+  color: #dadada;
 }
 
 .searchh {
