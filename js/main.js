@@ -69,6 +69,10 @@ $(function() {
         $("html").css("overflow", "auto");
     });
 
+    $(".searchh .inner").on("click", function(e) {
+        e.stopPropagation();
+    });
+
     // Main Slider
     $(".main-slider .owl-carousel").owlCarousel({
         autoplay: true,

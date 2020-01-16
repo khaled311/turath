@@ -335,7 +335,7 @@ html[dir="ltr"] .sideNav .links > ul > li a.lnr:before {
   left: 50%;
   -webkit-transform: translate(-50%, -50%) rotate(-45deg);
           transform: translate(-50%, -50%) rotate(-45deg);
-  opacity: 0.2;
+  opacity: 0.08;
   z-index: -1;
   -webkit-transition: 0.5s 0.5s;
   transition: 0.5s 0.5s;
