@@ -312,7 +312,7 @@ html[dir="ltr"] .sideNav .links > ul > li a.lnr:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: rgba(0, 0, 0, 0.98);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
