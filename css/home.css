@@ -760,7 +760,7 @@ html[dir="ltr"] .header .content .options > div.user span.lnr-chevron-down {
   right: 50%;
   top: 140%;
   width: 160px;
-  background-color: #FFF;
+  background-color: #FFF !important;
   padding: 7px 10px;
   -webkit-box-shadow: 0 0 20px rgba(23, 80, 146, 0.1);
           box-shadow: 0 0 20px rgba(23, 80, 146, 0.1);
