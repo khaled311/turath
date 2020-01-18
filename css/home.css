@@ -978,9 +978,14 @@ html[dir="ltr"] .header .content .options > div.lang .btn-group .dropdown-menu {
           transform: translateY(-10px) translateX(-50%);
 }
 
+.header .content .options > div.lang .btn-group .dropdown-menu li:not(:last-child) {
+  border-bottom: 1px solid #fafafa !important;
+}
+
 .header .content .options > div.lang .btn-group .dropdown-menu li a {
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  line-height: 2.4;
 }
 
 .header .content .options > div.lang .btn-group .dropdown-menu li a:hover {
