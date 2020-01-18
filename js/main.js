@@ -138,8 +138,18 @@ $(function() {
     // Preloder
     $(window).on("load", function() {
         $("html").css("overflow-y", "auto");
-        $(".loaderr").fadeOut(400, function() {
+        $("#preloader").fadeOut(400, function() {
             $(this).remove();
         });
     });
+
+    // Header DropDown
+    // $(".header .btn-group").on("mouseenter", function() {
+    //     $(this).addClass("open");
+    // });
+    $(".header .btn-group").hover(function(){
+        $(this).addClass("open");
+        }, function(){
+            $(this).removeClass("open");
+      });
 });

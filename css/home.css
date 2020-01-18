@@ -77,17 +77,6 @@ ul.res {
   src: url("../fonts/Tajawal-Black.ttf") format("ttf"), url("../fonts/Tajawal-Black.woff") format("woff"), url("../fonts/Tajawal-Black.woff2") format("woff2"), url("../fonts/Tajawal-Black.eot") format("eot");
 }
 
-@-webkit-keyframes spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -99,33 +88,79 @@ ul.res {
   }
 }
 
-.loaderr {
+#preloader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: #FFF;
   z-index: 99999;
-  background-color: #185090;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
-.loaderr .loader {
-  width: 80px;
-  height: 80px;
+#loader {
+  display: block;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
   border-radius: 50%;
-  border: 5px solid #EC8123;
-  border-left: 5px solid #185090;
-  -webkit-animation: spin 1s linear infinite;
-          animation: spin 1s linear infinite;
+  border: 3px solid transparent;
+  border-top-color: #ED8220;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+#loader:before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #175092;
+  -webkit-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+
+#loader:after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #9F1B1F;
+  -webkit-animation: spin 1.5s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }
 
 .navover {
@@ -312,7 +347,7 @@ html[dir="ltr"] .sideNav .links > ul > li a.lnr:before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: #175092fc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -390,12 +425,13 @@ html[dir="ltr"] .sideNav .links > ul > li a.lnr:before {
 
 .searchh .inner button {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 60px;
-  background-color: #175092;
+  top: 3px;
+  left: 5px;
+  height: 43px;
+  width: 43px;
+  background-color: #ec8123;
   border: 0;
+  border-radius: 50%;
   color: #fff;
   font-size: 25px;
   cursor: pointer;
@@ -410,16 +446,11 @@ html[dir="ltr"] .sideNav .links > ul > li a.lnr:before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  border-radius: 20px 0 0 20px;
 }
 
 html[dir="ltr"] .searchh .inner button {
-  right: 0;
+  right: 5px;
   left: unset;
-}
-
-html[dir="ltr"] .searchh .inner button {
-  border-radius: 0 20px 20px 0;
 }
 
 .searchh .inner button:hover {
@@ -904,10 +935,47 @@ html[dir="ltr"] .header .content .options > div.myCart .counTer {
 }
 
 .header .content .options > div.lang .btn-group .dropdown-menu {
+  display: block;
   -webkit-box-shadow: unset;
           box-shadow: unset;
   width: 100%;
-  border: 1px solid #175092;
+  position: absolute;
+  right: 50%;
+  top: 140%;
+  width: 160px;
+  background-color: #FFF;
+  padding: 7px 10px;
+  -webkit-box-shadow: 0 0 20px rgba(23, 80, 146, 0.1);
+          box-shadow: 0 0 20px rgba(23, 80, 146, 0.1);
+  border: 0;
+  opacity: 0;
+  border-radius: 10px;
+  visibility: hidden;
+  z-index: 9;
+  -webkit-transform: translateY(-10px) translateX(50%);
+          transform: translateY(-10px) translateX(50%);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.header .content .options > div.lang .btn-group .dropdown-menu:after {
+  content: "";
+  width: 0;
+  height: 0;
+  display: block;
+  border-width: 6px;
+  border-color: transparent transparent #FFF;
+  border-style: solid;
+  bottom: 100%;
+  position: absolute;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+html[dir="ltr"] .header .content .options > div.lang .btn-group .dropdown-menu {
+  -webkit-transform: translateY(-10px) translateX(-50%);
+          transform: translateY(-10px) translateX(-50%);
 }
 
 .header .content .options > div.lang .btn-group .dropdown-menu li a {
@@ -981,19 +1049,33 @@ html[dir="ltr"] .header .content .options > div.lang .btn-group button span {
 
 @media (min-width: 992px) {
   .header .content .options > div.lang .btn-group .dropdown-menu {
-    -webkit-transform: translateX(30px);
-            transform: translateX(30px);
+    -webkit-transform: translateY(-10px) translateX(55%);
+            transform: translateY(-10px) translateX(55%);
   }
   html[dir="ltr"] .header .content .options > div.lang .btn-group .dropdown-menu {
-    -webkit-transform: translateX(-30px);
-            transform: translateX(-30px);
+    -webkit-transform: translateY(-10px) translateX(55%);
+            transform: translateY(-10px) translateX(55%);
   }
 }
 
 @media (min-width: 1200px) {
   .header .content .options > div.lang .btn-group .dropdown-menu {
-    -webkit-transform: translateX(0px);
-            transform: translateX(0px);
+    -webkit-transform: translateY(-10px) translateX(50%);
+            transform: translateY(-10px) translateX(50%);
+  }
+}
+
+@media (min-width: 992px) {
+  html[dir="ltr"] .header .content .options > div.lang .btn-group .dropdown-menu {
+    -webkit-transform: translateY(-10px) translateX(-26%);
+            transform: translateY(-10px) translateX(-26%);
+  }
+}
+
+@media (min-width: 1200px) {
+  html[dir="ltr"] .header .content .options > div.lang .btn-group .dropdown-menu {
+    -webkit-transform: translateY(-10px) translateX(-26%);
+            transform: translateY(-10px) translateX(-26%);
   }
 }
 
@@ -1016,6 +1098,42 @@ html[dir="ltr"] .header .content .options > div.lang .btn-group .dropdown-menu l
 
 .header .content .options > div.lang .btn-group .dropdown-menu li a img {
   margin-left: 10px;
+}
+
+.header .content .options > div.lang .btn-group.open .dropdown-menu {
+  -webkit-transform: translateY(0) translateX(50%);
+          transform: translateY(0) translateX(50%);
+  opacity: 1;
+  visibility: visible;
+  z-index: 9999;
+}
+
+@media (min-width: 992px) {
+  .header .content .options > div.lang .btn-group.open .dropdown-menu {
+    -webkit-transform: translateY(0) translateX(55%);
+            transform: translateY(0) translateX(55%);
+  }
+}
+
+@media (min-width: 1200px) {
+  .header .content .options > div.lang .btn-group.open .dropdown-menu {
+    -webkit-transform: translateY(0) translateX(50%);
+            transform: translateY(0) translateX(50%);
+  }
+}
+
+@media (min-width: 992px) {
+  html[dir="ltr"] .header .content .options > div.lang .btn-group.open .dropdown-menu {
+    -webkit-transform: translateY(0) translateX(-26%);
+            transform: translateY(0) translateX(-26%);
+  }
+}
+
+@media (min-width: 1200px) {
+  html[dir="ltr"] .header .content .options > div.lang .btn-group.open .dropdown-menu {
+    -webkit-transform: translateY(0) translateX(-26%);
+            transform: translateY(0) translateX(-26%);
+  }
 }
 
 .header .content .options > div:hover *:not(.counTer) {
@@ -1309,13 +1427,15 @@ html[dir="ltr"] .header .content .options span.lnr {
   color: #9f1b1f;
 }
 
-.products .product {
-  overflow: hidden;
+.products .old-price {
+  color: #929292;
+  font-size: 14px;
+  text-decoration: line-through;
+  margin-top: 3px;
 }
 
-.products .product:hover img {
-  -webkit-transform: translateY(-10px) scale(1.03);
-          transform: translateY(-10px) scale(1.03);
+.products .product {
+  overflow: hidden;
 }
 
 @media (max-width: 480px) {
